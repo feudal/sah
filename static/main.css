@@ -1,0 +1,356 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* fonts {
+  font-family: 'Nixie One', cursive;
+  font-family: 'Noticia Text', serif;
+  font-family: 'Tenor Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+} */
+
+/*****--------------------main-----------------*****/
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+.top-bar {}
+
+ul.menu {
+  position: relative;
+  z-index: 10;
+  list-style-type: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  width: 100%;
+  padding: 2px;
+}
+
+.menu li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Noticia Text', sans-serif;
+  font-size: 18px;
+  padding: 5px 25px;
+  margin-left: 5px;
+
+  border: 1px solid transparent;
+}
+
+.link.active {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.link:hover {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all .3s;
+}
+
+.title {
+  z-index: 10;
+  position: relative;
+  margin: 0 auto;
+  font-family: Nixie One;
+  padding: 25px 5%;
+  color: #fff;
+  font-size: 140px;
+  text-align: center;
+
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.title .text {
+  text-decoration: none;
+  color: #fff;
+}
+
+.title:before,
+.title:after {
+  content: '♕';
+  position: absolute;
+  font-size: 60px;
+  top: 65px;
+}
+
+.title:before {
+  left: -50px;
+}
+
+.title:after {
+  right: -50px;
+}
+
+.subtitle {
+  z-index: 10;
+  text-decoration: none;
+  font-family: Noticia Text;
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 75px;
+  text-align: center;
+}
+
+.body {
+  position: relative;
+
+  background: url('img/flag-modova-vint.jpg') center center no-repeat;
+  /* url('img/new_board2.png') center center no-repeat; */
+  background-size: cover;
+}
+
+.kings {
+  width: 100%;
+  bottom: 12.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 20%;
+}
+
+.white_king,
+.black_king {
+  cursor: pointer;
+  width: 200px;
+  height: 500px;
+}
+
+.white_king {
+  background: url('img/king_w.png') no-repeat center center;
+}
+
+.black_king {
+  background: url('img/king_b.png') no-repeat center center;
+}
+
+.white_king:hover {
+  margin-left: 5%;
+  transition: all .5s;
+}
+
+.black_king:hover {
+  margin-right: 5%;
+  transition: all .5s;
+}
+/*****--------------------main-----------------*****/
+/*****--------------------jucatori-----------------*****/
+
+.board {
+  position: relative;
+  z-index: 1;
+}
+
+.board:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  opacity: .1;
+  z-index: -1;
+  background: url('img/board.jpg') center center;
+  background-size: cover;
+}
+
+.flag-img {
+  width: 100%;
+  min-height: 35px;
+  background: url('img/Flag-Moldova bar.jpg') center center;
+  background-size: cover;
+}
+
+.gerb img{
+  z-index: 5;
+  position: absolute;
+  height: 35px;
+  left: calc(50% - 17px);
+
+}
+
+.container-jucatori {
+  position: relative;
+  border: 1px solid red;
+  min-height: calc(100vh - 70px);
+  width: 78%;
+  margin: 0 auto;
+}
+
+.second-continer-jucatori {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+h1 {
+  font-family: Tenor Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 20px;
+}
+
+.card {
+  overflow: hidden;
+  width: 24%;
+  padding-top: 30%;
+
+  position: relative;
+  filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.3));
+  margin-bottom: 40px;
+}
+
+/*****--------------------big-card-----------------*****/
+
+.big-card.active {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 49.4%;
+}
+
+.big-card {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  width: 24%;
+
+  font-family: Ubuntu;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.big-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.card img {
+  position: absolute;
+}
+
+.big-frame img { 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.big-card img:hover {
+  transform: scale(1.3);
+  transition: all .3s;
+}
+
+.details {
+  display: none;
+  flex-grow: 1;
+  padding: 10px;
+  width: 60%;
+  padding: 25px;
+}
+
+.fide_link {
+  color: #2a3cdf;
+  text-decoration: none;
+}
+
+.rating-ELO {
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 10px;
+  border-radius: 5px;
+
+}
+
+.big-card .name {
+  position: absolute;
+  bottom: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 90%;
+  margin: 0 5%;
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+  font-family: Tenor Sans;
+  font-size: 20px;
+  text-align: center;
+}
+
+.big-card .name:hover {
+  width: 100%;
+  margin: -12% 0 0;
+  transition: all .4s;
+  border-radius: 0;
+}
+
+
+/*****--------------------big-card-----------------*****/
+
+
+
+
+
+.card .name:hover {
+  width: 100%;
+  margin: -12% 0 0;
+  transition: all .4s;
+  border-radius: 0;
+}
+
+.card .name:hover:after {
+  content: attr(title);
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+  width: 50%;
+  color: #66cccc;
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+/*****--------------------corner img-----------------*****/
+
+.corner-img {
+  position: absolute;
+  border: 1px solid red;
+  bottom: 0;
+  right: 0;
+
+}
+
+.corner-img img {
+  max-height: 250px;
+}
+
+footer {
+  height: 30px;
+}
