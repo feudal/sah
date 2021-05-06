@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+  <title>Sah</title>
+</head>
+
+<body class="board">
+  <nav class="flag-img">
+    <div class="gerb">
+      <img src="static/img/gerb-md.png" alt="gerb">
+    </div>
+    <ul class="menu">
+      <li><a href="{{url_for('sah.index')}}" class="link">Principala</a></li>
+      <li><a href="{{url_for('sah.players')}}" class="link">Jucători</a></li>
+      <li><a href="#" class="link">Noutăți</a></li>
+      <li><a href="#" class="link">Email</a></li>
+      <li><a href="#" class="link">Cabinet</a></li>
+    </ul>
+  </nav>
+  <div class="container-jucatori">
+    <h1>Jucătorii noștrii</h1>
+
+    <div class="second-continer-jucatori">
+
+      {% block content %}
+
+
+      {% endblock %}
+
+    </div>
+
+    <div class="corner-img">
+      <img src="static/img/corner-img.png" alt="chess">
+    </div>
+  </div>
+
+  <footer class="menu flag-img">
+    <div class="gerb">
+      <img src="static/img/gerb-md.png" alt="gerb">
+    </div>
+  </footer>
+  <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+
+</html>

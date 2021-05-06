@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% for sahist in sahisti %}
+
+      <div class="card">
+        <div class="frame">
+
+          <a href="{{url_for('sah.player')}}">
+            {% if sahist.have_img == True %}
+            <img src="static/img/sahisti/{{sahist.name}}.jpg" alt="photo" class="photo">
+            {% else %}
+
+              {% if sahist.sex == 'Male' %}
+                <img src="static/img/sahisti/king_for_photo.jpg" alt="male" class="photo">
+              {% else %}
+                <img src="static/img/sahisti/queen_for_photo.jpg" alt="female" class="photo">
+              {% endif %}
+
+            {% endif %}
+          </a>
+
+          <a href="#" class="name" onclick='toggle(this)' title='DETALII'>{{sahist.name}}</a>
+        </div>
+        <div class="details">
+          <div class="date">
+            <span class="bold">Дата рождения:</span><br>
+              {{sahist.dob}}
+          </div>
+          <div class="m-title">
+            <span class="bold">Звание:</span><br>
+              {{sahist.title}}
+          </div>
+          <div class="max-raiting">
+            <span class="bold">Максимальный рейтинг:</span><br>
+              {{sahist.max_rating}}
+          </div>
+          <div class="actual-raiting">
+            <span class="bold">Актуальный рейтинг:</span><br>
+              {{sahist.actual_rating}}
+          </div>
+          <a href="{{sahist.fide_link}}" class="fide_link">Личная карточка на сайте ФИДЕ</a>
+        </div>
+      </div>
+
+{% endfor %}
+
+
+{% endblock %}
+
