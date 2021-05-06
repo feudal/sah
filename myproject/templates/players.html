@@ -7,7 +7,7 @@
       <div class="card">
         <div class="frame">
 
-          <a href="{{url_for('sah.player')}}">
+          <a href="{{url_for('sah.player', name=sahist.name)}}">
             {% if sahist.have_img == True %}
             <img src="static/img/sahisti/{{sahist.name}}.jpg" alt="photo" class="photo">
             {% else %}
