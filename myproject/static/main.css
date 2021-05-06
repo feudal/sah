@@ -239,8 +239,7 @@ h1 {
 }
 
 .details {
-  /* display: none; */
-  visibility: hidden;
+  display: none;
 }
 
 .name {
@@ -250,7 +249,7 @@ h1 {
   background-color: #fff;
   width: 90%;
   margin: 0 5%;
-  padding: 10px 10px 12px;
+  padding: 12px 8px 14px;
   text-decoration: none;
   color: #000;
   font-family: Tenor Sans;
@@ -284,8 +283,7 @@ h1 {
 
 .big-details {
   /* flex-grow: 1; */
-  /* display: block; */
-  /* visibility: visible; */
+  display: block;
   padding: 25px;
 }
 
