@@ -18,5 +18,6 @@ def players():
 
 @sah.route('/jucator/<name>')
 def player(name):
-    sahist = ContentSahisti.query.filter_by(name=name).first()
-    return render_template('jucator.html', sahist=sahist)
+    sahist_content = ContentSahisti.query.filter_by(name=name).first()
+    sahist = Sahisti.query.filter_by(name=name).first()
+    return render_template('player.html', sahist=sahist, sahist_content=sahist_content)

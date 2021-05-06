@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
+  <div class="container-jucatori">
+    <h1>Jucătorii noștri</h1>
+
+    <div class="second-continer-jucatori">
 
 {% for sahist in sahisti %}
 
@@ -9,13 +13,13 @@
 
           <a href="{{url_for('sah.player', name=sahist.name)}}">
             {% if sahist.have_img == True %}
-            <img src="static/img/sahisti/{{sahist.name}}.jpg" alt="photo" class="photo">
+            <img src="{{url_for('static', filename='img/sahisti/' + sahist.name + '.jpg' )}}" alt="photo" class="photo">
             {% else %}
 
               {% if sahist.sex == 'Male' %}
-                <img src="static/img/sahisti/king_for_photo.jpg" alt="male" class="photo">
+                <img src="{{url_for('static', filename='img/sahisti/king_for_photo.jpg')}}" alt="male" class="photo">
               {% else %}
-                <img src="static/img/sahisti/queen_for_photo.jpg" alt="female" class="photo">
+                <img src="{{url_for('static', filename='img/sahisti/queen_for_photo.jpg')}}" alt="female" class="photo">
               {% endif %}
 
             {% endif %}
@@ -24,28 +28,49 @@
           <a href="#" class="name" onclick='toggle(this)' title='DETALII'>{{sahist.name}}</a>
         </div>
         <div class="details">
+          {% if sahist.dob %}
           <div class="date">
             <span class="bold">Дата рождения:</span><br>
               {{sahist.dob}}
           </div>
+          {% endif %}
+
+          {% if sahist.title %}
           <div class="m-title">
             <span class="bold">Звание:</span><br>
               {{sahist.title}}
           </div>
+          {% endif %}
+
+          {% if sahist.max_rating %}
           <div class="max-raiting">
             <span class="bold">Максимальный рейтинг:</span><br>
               {{sahist.max_rating}}
           </div>
+          {% endif %}
+
+          {% if sahist.actual_rating %}
           <div class="actual-raiting">
             <span class="bold">Актуальный рейтинг:</span><br>
               {{sahist.actual_rating}}
           </div>
+          {% endif %}
+
+          {% if sahist.fide_link %}
           <a href="{{sahist.fide_link}}" class="fide_link">Личная карточка на сайте ФИДЕ</a>
+          {% endif %}
         </div>
       </div>
+
 
 {% endfor %}
 
 
+    </div>
+
+    <div class="corner-img">
+      <img src="static/img/corner-img.png" alt="chess">
+    </div>
+  </div>
 {% endblock %}
 

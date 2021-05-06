@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-jucatori">
+  <div class="second-continer-jucatori grey">
+    <!--     ############################################################################### -->
+    <h1 class="section-title">
+      <img class='chess-figure chess-figure-big' src="{{url_for('static', filename='img/icons/rege.png')}}" alt="">
+      {{sahist.name}}
+    </h1>
+    <section>
+      <div class="card big-card section-card">
+        <div class="frame big-frame">
+          {% if sahist.have_img == True %}
+          <img src="{{url_for('static', filename='img/sahisti/' + sahist.name + '.jpg' )}}" alt="photo" class="photo">
+          {% else %}
+          {% if sahist.sex == 'Male' %}
+          <img src="{{url_for('static', filename='img/sahisti/king_for_photo.jpg')}}" alt="male" class="photo">
+          {% else %}
+          <img src="{{url_for('static', filename='img/sahisti/queen_for_photo.jpg')}}" alt="female" class="photo">
+          {% endif %}
+          {% endif %}
+          <a href="#" class="name">{{sahist.name}}</a>
+        </div>
+
+        <div class="details big-details">
+          {% if sahist.dob %}
+          <div class="date">
+            <span class="bold">Дата рождения:</span><br>
+              {{sahist.dob}}
+          </div>
+          {% endif %}
+
+          {% if sahist.title %}
+          <div class="m-title">
+            <span class="bold">Звание:</span><br>
+              {{sahist.title}}
+          </div>
+          {% endif %}
+
+          {% if sahist.max_rating %}
+          <div class="max-raiting">
+            <span class="bold">Максимальный рейтинг:</span><br>
+              {{sahist.max_rating}}
+          </div>
+          {% endif %}
+
+          {% if sahist.actual_rating %}
+          <div class="actual-raiting">
+            <span class="bold">Актуальный рейтинг:</span><br>
+              {{sahist.actual_rating}}
+          </div>
+          {% endif %}
+
+          {% if sahist.fide_link %}
+          <a href="{{sahist.fide_link}}" class="fide_link">Личная карточка на сайте ФИДЕ</a>
+          {% endif %}
+        </div>
+
+      </div>
+    </section>
+    <!--     ############################################################################### -->
+    <section>
+      <hr>
+      <div class="section-content">
+        {{sahist_content.main | safe }}
+      </div>
+    </section>
+    <!--     ############################################################################### -->
+    <section>
+      {% if sahist_content.biography %}
+
+      <h2 class="section-title">
+        <img class='chess-figure' src="{{url_for('static', filename='img/icons/nebun.png')}}" alt="nebun">
+        Биография
+      </h2><hr>
+      <div class="section-content">
+        {{sahist_content.biography | safe }}
+      </div>
+
+        {% endif %}
+    </section>
+    <!--     ############################################################################### -->
+    <section>
+      {% if sahist_content.family %}
+
+      <h2 class="section-title">
+        <img class='chess-figure' src="{{url_for('static', filename='img/icons/cal.png')}}" alt="cal">
+        Семья
+      </h2><hr>
+      <div class="section-content">
+        {{sahist_content.family | safe }}
+      </div>
+
+      {% endif %}
+    </section>
+    <!--     ############################################################################### -->
+    <section>
+      {% if sahist_content.sport_carrier %}
+
+      <h2 class="section-title">
+        <img class='chess-figure' src="{{url_for('static', filename='img/icons/tura.png')}}" alt="tura">
+        Спортивная карьера
+      </h2><hr>
+       <div class="section-content">
+      {{sahist_content.sport_carrier | safe }}
+      </div>
+
+      {% endif %}
+    </section>
+    <!--     ############################################################################### -->
+    <section>
+      {% if sahist_content.personal_life %}
+
+      <h2 class="section-title">
+        <img class='chess-figure' src="{{url_for('static', filename='img/icons/cal.png')}}" alt="cal">
+        Личная жизнь
+      </h2><hr>
+       <div class="section-content">
+      {{sahist_content.personal_life | safe }}
+      </div>
+
+      {% endif %}
+    </section>
+    <!--     ############################################################################### -->
+  </div>
+  <div class="corner-img">
+    <img src="{{url_for('static', filename='img/corner-img.png')}}" alt="chess">
+  </div>
+</div>
+
+{% endblock %}

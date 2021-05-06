@@ -11,7 +11,7 @@
 <body class="board">
   <nav class="flag-img">
     <div class="gerb">
-      <img src="static/img/gerb-md.png" alt="gerb">
+      <img src="{{url_for('static', filename='img/gerb-md.png')}}" alt="gerb">
     </div>
     <ul class="menu">
       <li><a href="{{url_for('sah.index')}}" class="link">Principala</a></li>
@@ -21,26 +21,15 @@
       <li><a href="#" class="link">Cabinet</a></li>
     </ul>
   </nav>
-  <div class="container-jucatori">
-    <h1>Jucătorii noștrii</h1>
 
-    <div class="second-continer-jucatori">
-
-      {% block content %}
+        {% block content %}
 
 
-      {% endblock %}
-
-    </div>
-
-    <div class="corner-img">
-      <img src="static/img/corner-img.png" alt="chess">
-    </div>
-  </div>
+        {% endblock %}
 
   <footer class="menu flag-img">
     <div class="gerb">
-      <img src="static/img/gerb-md.png" alt="gerb">
+      <img src="{{url_for('static', filename='img/gerb-md.png')}}" alt="gerb">
     </div>
   </footer>
   <script src="{{url_for('static', filename='main.js')}}"></script>
