@@ -12,7 +12,10 @@ def index():
 
 @sah.route('/jucatori')
 def players():
-    sahisti = Sahisti.query.all()
+    # sahisti = Sahisti.query.all()
+
+    page = request.args.get('page', 1, type=int)
+    sahisti = Sahisti.query.order_by(Sahisti.name).paginate(page=page, per_page=8)
     return render_template('players.html', sahisti=sahisti)
 
 

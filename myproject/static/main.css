@@ -384,3 +384,31 @@ hr {
   width: 100%;
   background-color: #fff;
 }
+/*****--------------------pagination-----------------*****/
+.pagination {
+  display: flex;
+  list-style-type: none;
+  text-decoration: none;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.page-item {
+  margin-left: 3px;
+}
+.page-item:hover .page-link{
+  background-color: #99A4AD;
+  transition: all .3s;
+}
+.disabled .page-link {
+  background-color: #99A4AD;
+}
+.page-link {  
+  display: block;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid transparent;
+}

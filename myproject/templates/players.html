@@ -6,7 +6,7 @@
 
     <div class="second-continer-jucatori">
 
-{% for sahist in sahisti %}
+{% for sahist in sahisti.items %}
 
       <div class="card">
         <div class="frame">
@@ -67,6 +67,24 @@
 
 
     </div>
+
+    <nav aria-label="Page Navigation example">
+        <ul class="pagination justify-content-center">
+
+            {% for page_num in sahisti.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if sahisti.page == page_num %}
+                    <li class="page-item disabled">
+                        <a href="{{url_for('sah.players', page=page_num)}}" class="page-link">{{page_num}}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a href="{{url_for('sah.players', page=page_num)}}" class="page-link">{{page_num}}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </nav>
 
     <div class="corner-img">
       <img src="static/img/corner-img.png" alt="chess">
