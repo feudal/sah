@@ -6,3 +6,10 @@ function toggle(link) {
 	frame = card.getElementsByClassName('frame')[0]
 	frame.classList.toggle('big-frame');
 }
+
+tog_menu = document.getElementById("toggle_menu")
+tog_menu.addEventListener("click", toggle_menu)
+
+function toggle_menu() {
+	document.getElementById("id_menu").classList.toggle('active');
+}

@@ -13,11 +13,13 @@
 <body class="body">
   <div class="page">
     <nav class="top-bar">
-      <ul class="menu">
-      <li><a href="{{url_for('sah.index')}}" class="link active">Principala</a></li>
-      <li><a href="{{url_for('sah.players')}}" class="link">Jucători</a></li>
-        <li><a href="#" class="link">Noutăți</a></li>
-        <li><a href="#" class="link">Email</a></li>
+      <ul class="menu" id='id_menu'>
+        <li>
+          <img class="menu-burger" id='toggle_menu' src="{{url_for('static', filename='img/menu-burger.png')}}" alt="">
+        </li>
+        <li><a href="{{url_for('sah.index')}}" class="link">Principala</a></li>
+        <li><a href="{{url_for('sah.players')}}" class="link">Jucători</a></li>
+        <li><a href="#" class="link">Tari</a></li>
         <li><a href="#" class="link">Cabinet</a></li>
       </ul>
     </nav>
@@ -28,10 +30,15 @@
     <a href="{{url_for('sah.players')}}" class="subtitle">Cei mai buni sahisti ai Moldovei</a>
   </div>
   <div class="kings">
-  	<div class="white_king"></div>
-  	<div class="empty"></div>
-  <div class="black_king"></div>
+    <div class="white_king">
+      <img src="{{url_for('static', filename='img/king_w.png')}}" alt="white_king">
+    </div>
+    <div class="empty"></div>
+    <div class="black_king">
+      <img src="{{url_for('static', filename='img/king_b.png')}}" alt="black_king">
+    </div>
   </div>
+  <script src="{{url_for('static', filename='main.js')}}"></script>
 </body>
 
 </html>

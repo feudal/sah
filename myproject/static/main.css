@@ -8,6 +8,10 @@ img {
   display: block;
 }
 
+body {
+  width: 100%;
+}
+
 /* fonts {
   font-family: 'Nixie One', cursive;
   font-family: 'Noticia Text', serif;
@@ -24,7 +28,9 @@ img {
   height: 100vh;
 }
 
-.top-bar {}
+.top-bar {
+  width: 100%;
+}
 
 ul.menu {
   position: relative;
@@ -131,12 +137,10 @@ ul.menu {
   height: 500px;
 }
 
-.white_king {
-  background: url('img/king_w.png') no-repeat center center;
-}
-
-.black_king {
-  background: url('img/king_b.png') no-repeat center center;
+.white_king img,
+.black_king img {
+  width: 100%;
+  height: 100%;
 }
 
 .white_king:hover {
@@ -377,13 +381,16 @@ h2.section-title {
   padding: 20px;
 
 }
+
 hr {
   color: #000;
 }
+
 .section-image {
   width: 100%;
   background-color: #fff;
 }
+
 /*****--------------------pagination-----------------*****/
 .pagination {
   display: flex;
@@ -396,14 +403,17 @@ hr {
 .page-item {
   margin-left: 3px;
 }
-.page-item:hover .page-link{
+
+.page-item:hover .page-link {
   background-color: #99A4AD;
   transition: all .3s;
 }
+
 .disabled .page-link {
   background-color: #99A4AD;
 }
-.page-link {  
+
+.page-link {
   display: block;
   border-radius: 3px;
   background-color: #fff;
@@ -412,3 +422,115 @@ hr {
   color: #000;
   border: 1px solid transparent;
 }
+
+/*****--------------------media-----------------*****/
+/*****--------------------index-----------------*****/
+.menu-burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+
+  .title {
+    font-size: 100px;
+    overflow: hidden;
+  }
+
+  .title:before,
+  .title:after {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 36px;
+  }
+
+  .white_king,
+  .black_king {
+
+    width: 150px;
+    height: 357px;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  ul.menu {
+    flex-direction: column;
+    overflow: hidden;
+    height: 42px;
+  }
+
+  ul.active {
+    height: 100vh;
+  }
+
+  .menu-burger {
+    display: block;
+    width: 36px;
+    opacity: 0.8;
+    cursor: pointer;
+
+  }
+
+  .menu .link {
+    font-size: 40px;
+  }
+
+  .title {
+    font-size: 80px;
+  }
+
+  .title:before,
+  .title:after {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 26px;
+  }
+
+  .white_king,
+  .black_king {
+
+    width: 125px;
+    height: 312px;
+  }
+
+}
+
+@media (max-width: 411px) {
+
+  .menu {
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 60px;
+    margin: 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+
+  .title:before,
+  .title:after {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .white_king,
+  .black_king {
+
+    width: 75px;
+    height: 170px;
+  }
+
+}
+
+/*****--------------------media-----------------*****/
+/*****--------------------index-----------------*****/
