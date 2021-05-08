@@ -39,7 +39,7 @@ ul.menu {
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   width: 100%;
-  padding: 2px;
+  padding: 3.5px;
 }
 
 .menu li {
@@ -457,8 +457,15 @@ hr {
 
 @media (max-width: 640px) {
 
-  .gerb img{
+  .gerb img {
     margin-top: 3px
+  }
+  nav {
+    position: fixed;
+    z-index: 20;
+  }
+  h1 {
+    padding-top: 60px;
   }
 
   ul.menu {
@@ -468,9 +475,9 @@ hr {
   }
 
   ul.active {
-    height: 100%;
+
     min-height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 20;
     top: 0;
     background: #CCA800;
@@ -543,3 +550,55 @@ hr {
 
 /*****--------------------media-----------------*****/
 /*****--------------------index-----------------*****/
+
+/*****--------------------media-----------------*****/
+/*****--------------------jucatori-----------------*****/
+@media (max-width: 1024px) {
+
+  .name {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .frame {
+    position: relative;
+    width: 100%;
+    width: 24vw;
+    height: 30vw;
+  }
+
+  .name {
+  }
+
+}
+
+@media (max-width: 640px) {
+
+
+  .frame {
+    position: relative;
+    width: 100%;
+    width: 38vw;
+    height: 49vw;
+  }
+
+}
+
+@media (max-width: 411px) {
+
+  .frame {
+    position: relative;
+    width: 100%;
+    width: 80vw;
+    height: 120vw;
+  }
+
+    .name {
+    padding: 10px 5px;
+    font-size: 24px;
+  }
+
+}
