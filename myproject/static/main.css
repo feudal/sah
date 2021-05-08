@@ -177,7 +177,7 @@ ul.menu {
 
 .flag-img {
   width: 100%;
-  min-height: 35px;
+  min-height: 38px;
   background: url('img/Flag-Moldova bar.jpg') center center;
   background-size: cover;
 }
@@ -457,6 +457,10 @@ hr {
 
 @media (max-width: 640px) {
 
+  .gerb img{
+    margin-top: 3px
+  }
+
   ul.menu {
     flex-direction: column;
     overflow: hidden;
@@ -464,7 +468,12 @@ hr {
   }
 
   ul.active {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    background: #CCA800;
   }
 
   .menu-burger {

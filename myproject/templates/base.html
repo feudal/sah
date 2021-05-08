@@ -13,11 +13,14 @@
     <div class="gerb">
       <img src="{{url_for('static', filename='img/gerb-md.png')}}" alt="gerb">
     </div>
-    <ul class="menu">
+    <ul class="menu" id='id_menu'>
+      <li>
+        <img class="menu-burger" id='toggle_menu' src="{{url_for('static', filename='img/menu-burger.png')}}" alt="">
+      </li>
       <li><a href="{{url_for('sah.index')}}" class="link">Principala</a></li>
       <li><a href="{{url_for('sah.players')}}" class="link">Jucători</a></li>
-      <li><a href="#" class="link">Tari</a></li>
-      <li><a href="#" class="link">Cabinet</a></li>
+      <li><a href="#" class="link">Alți jucatori</a></li>
+      <li><a href="#" class="link"></a></li>
     </ul>
   </nav>
 
