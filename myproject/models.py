@@ -86,5 +86,25 @@ class ContentSahisti(db.Model):
         self.sport_carrier = sport_carrier
         self.personal_life = personal_life
 
-    def __repr__(self):
-        return f'Post ID: {self.id}'
+
+class ContentGrandmasters(db.Model):
+    __tablename__ = 'grandmasters_content'
+
+    # users = db.relationship(User)
+
+    name = db.Column(db.String, unique=True, nullable=False)
+    main = db.Column(db.String)
+    biography = db.Column(db.String)
+    family = db.Column(db.String)
+    sport_carrier = db.Column(db.String)
+    personal_life = db.Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)
+
+    def __init__(self, name, main=None, biography=None, family=None, sport_carrier=None, personal_life=None):
+        self.name = name
+        self.main = main
+        self.biography = biography
+        self.family = family
+        self.sport_carrier = sport_carrier
+        self.personal_life = personal_life
+

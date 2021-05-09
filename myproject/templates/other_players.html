@@ -5,15 +5,13 @@
     <h1>Alții jucătorii</h1>
 
     <div class="second-continer-jucatori">
-        {{sahisti[0]}}
-
 
 {% for sahist in sahisti.items %}
 
       <div class="card">
         <div class="frame">
 
-          <a href="{{url_for('sah.player', name=sahist.name)}}">
+          <a href="{{url_for('sah.other_player', name=sahist.name)}}">
             {% if sahist.have_img == True %}
             <img src="{{url_for('static', filename='img/grandmasters/' + sahist.name + '.jpg' )}}" alt="photo" class="photo">
             {% else %}
@@ -80,7 +78,7 @@
     <nav aria-label="Page Navigation example">
         <ul class="pagination justify-content-center">
 
-            {% for page_num in sahisti.iter_pages(left_edge=2, right_edge=2, left_current=1, right_current=2) %}
+            {% for page_num in sahisti.iter_pages(left_edge=3, right_edge=3, left_current=1, right_current=2) %}
                 {% if page_num %}
                     {% if sahisti.page == page_num %}
                         <li class="page-item disabled">

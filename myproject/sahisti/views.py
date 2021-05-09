@@ -1,6 +1,6 @@
 from flask import render_template, request, Blueprint
 
-from myproject.models import Sahisti, ContentSahisti, Grandmasters
+from myproject.models import Sahisti, ContentSahisti, Grandmasters, ContentGrandmasters
 
 sah = Blueprint('sah', __name__)
 
@@ -33,3 +33,10 @@ def player(name):
     sahist_content = ContentSahisti.query.filter_by(name=name).first()
     sahist = Sahisti.query.filter_by(name=name).first()
     return render_template('player.html', sahist=sahist, sahist_content=sahist_content)
+
+
+@sah.route('/other_player/<name>')
+def other_player(name):
+    sahist_content = ContentGrandmasters.query.filter_by(name=name).first()
+    sahist = Grandmasters.query.filter_by(name=name).first()
+    return render_template('other_player.html', sahist=sahist, sahist_content=sahist_content)
