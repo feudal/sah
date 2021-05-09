@@ -30,10 +30,10 @@ from myproject.sahisti.views import sah
 # from myproject.core.views import core
 # from myproject.users.views import users
 # from myproject.blog_posts.views import blog_posts
-# from myproject.error_pages.handlers import error_pages
+from myproject.error_pages.handlers import error_pages
 #
 app.register_blueprint(sah)
 # app.register_blueprint(core)
 # app.register_blueprint(users)
-# app.register_blueprint(error_pages)
+app.register_blueprint(error_pages)
 # app.register_blueprint(blog_posts)
