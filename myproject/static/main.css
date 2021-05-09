@@ -460,10 +460,12 @@ hr {
   .gerb img {
     margin-top: 3px
   }
-  nav {
+
+  .nav {
     position: fixed;
     z-index: 20;
   }
+
   h1 {
     padding-top: 60px;
   }
@@ -561,6 +563,7 @@ hr {
   }
 
 }
+
 @media (max-width: 768px) {
 
   .frame {
@@ -570,8 +573,7 @@ hr {
     height: 30vw;
   }
 
-  .name {
-  }
+  .name {}
 
 }
 
@@ -589,16 +591,13 @@ hr {
 
 @media (max-width: 411px) {
 
-  .frame {
-    position: relative;
-    width: 100%;
-    width: 80vw;
-    height: 120vw;
+  .name {
+    padding: 5px 5px;
+    font-size: 12px;
   }
 
-    .name {
-    padding: 10px 5px;
-    font-size: 24px;
+  .corner-img img {
+    max-height: 150px;
   }
 
 }
