@@ -424,6 +424,7 @@ hr {
   color: #000;
   border: 1px solid transparent;
 }
+
 .dots {
   display: inline-block;
   font-weight: bold;
@@ -570,6 +571,15 @@ hr {
     font-size: 14px;
   }
 
+  .big-details {
+    padding: 18px;
+  }
+
+  .big-details div {
+    font-size: 14px;
+  }
+
+
 }
 
 @media (max-width: 768px) {
@@ -581,13 +591,17 @@ hr {
     height: 30vw;
   }
 
+
+
   .name {}
 
 }
 
 @media (max-width: 640px) {
-
-
+.container-jucatori h1 {
+    font-size: 40px;
+    text-align: center;
+  }
   .frame {
     position: relative;
     width: 100%;
@@ -597,15 +611,75 @@ hr {
 
 }
 
+@media (max-width: 500px) {
+
+  div.big-details {
+    padding: 8px;
+  }
+
+  .big-details div {
+    font-size: 14px;
+  }
+
+  .big-details a {
+    font-size: 14px;
+  }
+
+  .corner-img img {
+    max-height: 150px;
+  }
+}
+
 @media (max-width: 411px) {
+
+  .container-jucatori h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  div.big-details {
+    padding: 8px;
+  }
+
+  .big-details div {
+    font-size: 10px;
+  }
+
+  .big-details a {
+    font-size: 8px;
+  }
 
   .name {
     padding: 5px 5px;
     font-size: 12px;
   }
 
-  .corner-img img {
-    max-height: 150px;
+  .player-details {}
+
+  .player-details div {
+    font-size: 12px;
+    line-height: 12px;
   }
 
+  .player-details a {
+    font-size: 10px;
+  }
+
+  .chess-figure {
+    /* position: absolute; */
+  }
+    .section-title {
+    display: flex;
+    align-items: center;
+  }
+
+
+
 }
+
+/*****--------------------error-----------------*****/
+.big-container {
+  height: calc(100vh - 160px);
+}
+
+/*****--------------------error-----------------*****/
