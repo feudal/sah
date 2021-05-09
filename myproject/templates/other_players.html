@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="container-jucatori">
+    <h1>Alții jucătorii</h1>
+
+    <div class="second-continer-jucatori">
+        {{sahisti[0]}}
+
+
+{% for sahist in sahisti.items %}
+
+      <div class="card">
+        <div class="frame">
+
+          <a href="{{url_for('sah.player', name=sahist.name)}}">
+            {% if sahist.have_img == True %}
+            <img src="{{url_for('static', filename='img/grandmasters/' + sahist.name + '.jpg' )}}" alt="photo" class="photo">
+            {% else %}
+
+              {% if sahist.sex == 'Male' %}
+                <img src="{{url_for('static', filename='img/grandmasters/king_for_photo.jpg')}}" alt="male" class="photo">
+              {% else %}
+                <img src="{{url_for('static', filename='img/grandmasters/queen_for_photo.jpg')}}" alt="female" class="photo">
+              {% endif %}
+
+            {% endif %}
+          </a>
+
+          <a href="#" class="name" onclick='toggle(this)' title='DETALII'>{{sahist.name}}</a>
+        </div>
+        <div class="details">
+          {% if sahist.dob %}
+          <div class="date">
+            <span class="bold">Дата рождения:</span><br>
+              {{sahist.dob}}
+          </div>
+          {% endif %}
+
+          {% if sahist.title %}
+          <div class="m-title">
+            <span class="bold">Звание:</span><br>
+              {{sahist.title}}
+          </div>
+          {% endif %}
+
+          {% if sahist.country %}
+          <div class="m-title">
+            <span class="bold">Страна:</span><br>
+              {{sahist.country}}
+          </div>
+          {% endif %}
+
+          {% if sahist.max_rating %}
+          <div class="max-raiting">
+            <span class="bold">Максимальный рейтинг:</span><br>
+              {{sahist.max_rating}}
+          </div>
+          {% endif %}
+
+          {% if sahist.actual_rating %}
+          <div class="actual-raiting">
+            <span class="bold">Актуальный рейтинг:</span><br>
+              {{sahist.actual_rating}}
+          </div>
+          {% endif %}
+
+          {% if sahist.fide_link %}
+          <a href="{{sahist.fide_link}}" class="fide_link">Личная карточка на сайте ФИДЕ</a>
+          {% endif %}
+        </div>
+      </div>
+
+
+{% endfor %}
+
+
+    </div>
+
+    <nav aria-label="Page Navigation example">
+        <ul class="pagination justify-content-center">
+
+            {% for page_num in sahisti.iter_pages(left_edge=2, right_edge=2, left_current=1, right_current=2) %}
+                {% if page_num %}
+                    {% if sahisti.page == page_num %}
+                        <li class="page-item disabled">
+                            <a href="{{url_for('sah.other_players', page=page_num)}}" class="page-link">{{page_num}}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a href="{{url_for('sah.other_players', page=page_num)}}" class="page-link">{{page_num}}</a>
+                        </li>
+                    {% endif %}
+                {% else %}
+                    <span class="dots">...</span>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </nav>
+
+    <div class="corner-img">
+      <img src="static/img/corner-img.png" alt="chess">
+    </div>
+  </div>
+{% endblock %}
+
