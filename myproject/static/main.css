@@ -181,7 +181,7 @@ ul.menu {
   width: 100%;
   min-height: 38px;
   background: url('img/Flag-Moldova bar.jpg') center center;
-  background-size: cover;
+  background-size: contain;
 }
 
 .gerb img {
@@ -626,11 +626,24 @@ hr {
   }
 
   .corner-img img {
-    max-height: 150px;
+    max-height: 120px;
   }
 }
 
 @media (max-width: 411px) {
+
+  .big-frame {
+    min-width: 90px;
+  }
+
+  .section-content {
+    line-height: 18px;
+    padding: 14px;
+  }
+
+  .container-jucatori {
+    padding-bottom: 130px;
+  }
 
   .container-jucatori h1 {
     font-size: 30px;
@@ -668,9 +681,10 @@ hr {
   .chess-figure {
     /* position: absolute; */
   }
-    .section-title {
+    h1.section-title {
     display: flex;
     align-items: center;
+    font-size: 22px;
   }
 
 
