@@ -645,6 +645,11 @@ hr {
     padding-bottom: 130px;
   }
 
+  .container-jucatori h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
   div.big-details {
     padding: 8px;
   }
@@ -680,9 +685,6 @@ hr {
     display: flex;
     align-items: center;
     font-size: 22px;
-    padding: 12px;
-    margin-top: 30px;
-    font-size: 30px;
   }
 
 
